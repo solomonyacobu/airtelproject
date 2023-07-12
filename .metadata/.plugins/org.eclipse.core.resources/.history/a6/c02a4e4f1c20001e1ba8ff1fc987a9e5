@@ -1,0 +1,34 @@
+package com.stepdefinition;
+
+import java.io.IOException;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+import com.pages.airtelfinancepage;
+import com.pages.bankpage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class bankstep extends BaseclassBDD{
+	public bankpage ab;
+	public SeleniumUtilitiesBDD subaf;
+	@Given("the user has launched the application for bank")
+	public void the_user_has_launched_the_application_for_bank() throws IOException, InterruptedException {
+		LaunchBrowser();
+	}
+
+	@When("the user click the bank")
+	public void the_user_click_the_bank() throws InterruptedException, IOException {
+		ab=new bankpage(driver);
+		ab.page6();
+	    
+	}
+
+	@Then("bank should display the dash board")
+	public void bank_should_display_the_dash_board() {
+		closebrowser();
+	    
+	}
+}

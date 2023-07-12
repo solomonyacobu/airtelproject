@@ -1,0 +1,30 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class airtelblackpage extends BaseclassBDD {
+	public SeleniumUtilitiesBDD pageab;
+	public  airtelblackpage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+@FindBy(xpath="//label[text()='Airtel Black']")
+WebElement airtelblack;
+@FindBy(xpath="//label[text()='Pay Bill']")
+WebElement paybill;
+public void page1() throws InterruptedException {
+	pageab=new SeleniumUtilitiesBDD(driver);
+	pageab.doclick(airtelblack);
+	Thread.sleep(4000);
+	pageab.doclick(paybill);
+	
+	
+}
+}

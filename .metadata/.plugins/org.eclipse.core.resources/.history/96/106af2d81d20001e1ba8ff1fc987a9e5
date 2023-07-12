@@ -1,0 +1,39 @@
+package com.stepdefinition;
+
+import java.io.IOException;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+import com.pages.broadbandpage;
+import com.pages.dthpage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class dthstep extends BaseclassBDD {
+	
+	public dthpage dth;
+	public SeleniumUtilitiesBDD subdth;
+	
+	@Given("the user has launched the application for dth")
+	public void the_user_has_launched_the_application_for_dth() throws IOException, InterruptedException {
+		LaunchBrowser();
+	    
+	}
+
+	@When("the user click the dth")
+	public void the_user_click_the_dth() throws IOException, InterruptedException {
+		dth=new dthpage(driver);
+		dth.page4();
+		
+	   
+	}
+
+	@Then("dth should display the dash board")
+	public void dth_should_display_the_dash_board() {
+		closebrowser();
+	   
+	}
+
+}

@@ -1,0 +1,38 @@
+package com.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class accountpage extends BaseclassBDD {
+	SeleniumUtilitiesBDD pageac;
+	public accountpage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		}
+	
+@FindBy(xpath="//label[text()='Account']")
+WebElement account;
+@FindBy(xpath="//label[text()='Recharge']")
+WebElement recharge;
+@FindBy(xpath="//button[@class='wt-btn']")
+WebElement pprecharge;
+
+public void page8() throws IOException {
+	
+	
+	pageac=new SeleniumUtilitiesBDD(driver);
+	pageac.doclick(account);
+    pageac.doclick(recharge);
+    pageac.windowhandling(recharge);
+    pageac.doclick(pprecharge);
+    pageac.takeSS("src/test/resources/TakeScreenShot/accountpages.png");
+    
+}
+}

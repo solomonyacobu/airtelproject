@@ -1,0 +1,9 @@
+package com.pages;
+
+public class searchpage {
+
+	public searchpage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

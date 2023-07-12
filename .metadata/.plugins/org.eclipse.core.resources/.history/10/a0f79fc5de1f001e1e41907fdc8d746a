@@ -1,0 +1,27 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class airtelblackpage extends BaseclassBDD {
+	SeleniumUtilitiesBDD pageab;
+	
+	public void airtelblack(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		
+	}
+@FindBy(xpath="//label[text()='Airtel Black']")
+WebElement airtelblack;
+public void page1() {
+	pageab=new SeleniumUtilitiesBDD(driver);
+	pageab.dropdown(airtelblack, "Pay Bill");
+	
+	
+}
+}

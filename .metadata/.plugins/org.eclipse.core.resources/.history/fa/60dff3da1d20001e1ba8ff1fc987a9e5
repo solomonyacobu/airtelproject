@@ -1,0 +1,37 @@
+package com.stepdefinition;
+
+import java.io.IOException;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+import com.pages.accountpage;
+import com.pages.broadbandpage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class broadbandstep extends BaseclassBDD {
+	public broadbandpage bb;
+	public SeleniumUtilitiesBDD subbb; 
+	
+	@Given("the user has launched the application for broadband")
+	public void the_user_has_launched_the_application_for_broadband() throws IOException, InterruptedException {
+		LaunchBrowser();
+	}
+
+	@When("the user click the broadband")
+	public void the_user_click_the_broadband() throws IOException, InterruptedException {
+		bb=new broadbandpage(driver);
+		bb.page5();
+	}
+
+	@Then("broadband should display the dash board")
+	public void broadband_should_display_the_dash_board() {
+		closebrowser();
+	}
+
+
+
+
+}

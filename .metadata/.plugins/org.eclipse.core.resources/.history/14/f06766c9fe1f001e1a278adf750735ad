@@ -1,0 +1,7 @@
+Feature: To validate the airtel app
+
+Scenario: To validate the account functionality
+Given the user has launched the application for account
+When the user click the account
+Then it should display the dash board
+

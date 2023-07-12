@@ -1,0 +1,39 @@
+package com.stepdefinition;
+
+import java.io.IOException;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+import com.pages.airtelblackpage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class airtelblackstep extends BaseclassBDD {
+	
+	
+	public airtelblackpage abp;
+	public SeleniumUtilitiesBDD sub;
+	
+	@Given("the user has launched the application")
+	public void the_user_has_launched_the_application() throws IOException, InterruptedException {
+		LaunchBrowser();
+	    
+	}
+
+	@When("the use has click the pay bill")
+	public void the_use_has_click_the_pay_bill() throws InterruptedException {
+		abp.page1();
+	    
+	}
+
+	@Then("it shoud dispaly the dash board")
+	public void it_shoud_dispaly_the_dash_board() throws IOException {
+		sub=new SeleniumUtilitiesBDD(driver);
+		sub.takeSS("src/test/resources/TakeScreenShot/abpages.png");
+		closebrowser();
+	    
+	}
+
+}

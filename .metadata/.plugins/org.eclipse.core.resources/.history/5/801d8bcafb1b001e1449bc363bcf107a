@@ -1,0 +1,9 @@
+package com.pages;
+
+public class shoespage {
+
+	public shoespage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

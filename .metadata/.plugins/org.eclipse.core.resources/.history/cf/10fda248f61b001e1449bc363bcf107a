@@ -1,0 +1,9 @@
+package com.testing;
+
+public class amazontest {
+
+	public amazontest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

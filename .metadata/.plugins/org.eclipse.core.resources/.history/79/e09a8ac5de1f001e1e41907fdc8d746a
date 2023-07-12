@@ -1,0 +1,6 @@
+Feature: To validate the airtelapp
+
+Scenario: To validate the airtelblack functionality
+Given the user has launched the application
+When the use has click the pay bill
+Then it shoud dispaly the dash board

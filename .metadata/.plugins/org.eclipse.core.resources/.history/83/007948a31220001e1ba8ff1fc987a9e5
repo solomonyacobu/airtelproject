@@ -1,0 +1,34 @@
+package com.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class airtelfinancepage extends BaseclassBDD {
+	
+	SeleniumUtilitiesBDD pagef;
+	public airtelfinancepage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		}
+	
+@FindBy(xpath="//label[text()='Airtel Finance']")
+WebElement airtelfinance;
+@FindBy(xpath="(//*[@id=\"nav-dropdowns-6\"]/div/div/div[2]/a[1]")
+WebElement creditcard;
+
+public void page7() throws InterruptedException, IOException {
+	pagef=new SeleniumUtilitiesBDD(driver);
+	Thread.sleep(4000);
+	pagef.movetoelement(airtelfinance);
+	Thread.sleep(4000);
+	pagef.doclick(creditcard);
+	pagef.takeSS("src/test/resources/TakeScreenShot/afpage.png");
+}
+}

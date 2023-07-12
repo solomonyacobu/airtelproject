@@ -1,0 +1,6 @@
+Feature: To validate the airtel app
+@tc5
+Scenario: To validate the dth functionality
+Given the user has launched the application for dth
+When the user click the dth
+Then dth should display the dash board

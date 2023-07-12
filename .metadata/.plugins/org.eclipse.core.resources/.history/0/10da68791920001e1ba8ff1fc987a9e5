@@ -1,0 +1,33 @@
+package com.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class dthpage extends BaseclassBDD {
+	SeleniumUtilitiesBDD pagedth;
+	public dthpage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		}
+	@FindBy(xpath="//label[text()='DTH']")
+	WebElement airteldth;
+	@FindBy(xpath="(//label[text()='View Plans'])[5]")
+	WebElement viewpalns;
+
+	public void page4() throws IOException, InterruptedException {
+		pagedth=new SeleniumUtilitiesBDD(driver);
+		pagedth.doclick(airteldth);
+		Thread.sleep(4000);
+		pagedth.doclick(viewpalns);
+		Thread.sleep(4000);
+		pagedth.takeSS("src/test/resources/TakeScreenShot/airtelairteldthpage.png");
+		
+	}
+}

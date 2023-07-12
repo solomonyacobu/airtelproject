@@ -1,0 +1,42 @@
+package com.stepdefinition;
+
+import java.io.IOException;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+import com.pages.accountpage;
+import com.pages.airtelblackpage;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class accountstep extends BaseclassBDD {
+	public accountpage acp;
+	public SeleniumUtilitiesBDD subac;
+	
+	
+	
+	@Given("the user has launched the application for account")
+	public void the_user_has_launched_the_application_for_account() throws IOException, InterruptedException {
+		LaunchBrowser();
+	    
+	}
+
+	@When("the user click the account")
+	public void the_user_click_the_account() throws IOException, InterruptedException {
+		acp=new accountpage(driver);
+		acp.page8();
+	    
+	}
+
+	@Then("it should display the dash board")
+	public void it_should_display_the_dash_board() {
+		closebrowser();
+	    
+	}
+
+
+
+
+}

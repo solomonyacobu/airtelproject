@@ -1,0 +1,39 @@
+package com.testing;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.Library.Baseclass;
+import com.pages.searchpage;
+import com.pages.shoespage;
+
+public class amazontest extends Baseclass {
+	searchpage sp;
+	
+	@BeforeMethod
+	public void launch() throws InterruptedException, IOException {
+		LaunchApp();
+	}
+	@Test
+	public void testpage1() throws IOException {
+		sp=new searchpage(driver);
+		sp.search1();
+		sp.nike();
+	
+		}
+
+	
+
+
+	@AfterMethod
+	public void closing() {
+		
+		teardown();
+	}
+
+	
+
+}

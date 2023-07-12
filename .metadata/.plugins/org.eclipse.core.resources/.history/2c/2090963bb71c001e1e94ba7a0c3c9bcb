@@ -1,0 +1,30 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.Baseclass;
+import com.Reusable.SeleniumUtilities;
+
+public class shoespage extends Baseclass {
+	
+	SeleniumUtilities sep;
+	
+	public shoespage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		}
+@FindBy(id="p_72-title")
+WebElement scrolldown;
+@FindBy(xpath="(//span[text()='Nike'])[49]")
+WebElement nike;
+
+public void nike() {
+	
+	sep=new SeleniumUtilities(driver);
+	sep.scroll(scrolldown);
+	sep.doclick(nike);
+}
+}

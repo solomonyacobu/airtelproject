@@ -1,0 +1,6 @@
+Feature: To validate the airtel app
+@tc7
+Scenario: To validate the finance functionality
+Given the user has launched the application for finance
+When the user click the finance
+Then it should display the dash board

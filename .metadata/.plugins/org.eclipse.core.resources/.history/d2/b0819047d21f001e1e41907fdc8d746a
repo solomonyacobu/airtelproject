@@ -1,0 +1,46 @@
+package com.Library;
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseclassBDD {
+	
+	
+	public WebDriver driver;
+	public Properties prope;
+	 
+	
+	public void LaunchBrowser() throws IOException, InterruptedException {
+		
+		
+		FileInputStream stream=new FileInputStream("src/test/resources/Properties/Apollo.properties");
+		prope=new Properties();
+		prope.load(stream);
+		
+		if(prope.getProperty("browser").equalsIgnoreCase("chrome")) {
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		}
+		else if(prope.getProperty("browser").equalsIgnoreCase("edgedriver"))
+		{
+				WebDriverManager.edgedriver().setup();
+				driver=new EdgeDriver();
+			}
+		driver.get(prope.getProperty("URL3"));
+		driver.manage().window().maximize();
+		Thread.sleep(4000);
+	}
+	
+	public void closebrowser() {
+		driver.close();
+		
+	}
+}

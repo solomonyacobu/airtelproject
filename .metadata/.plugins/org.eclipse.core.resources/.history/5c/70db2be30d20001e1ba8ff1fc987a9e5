@@ -1,0 +1,43 @@
+package com.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Library.BaseclassBDD;
+import com.Reusable.SeleniumUtilitiesBDD;
+
+public class accountpage extends BaseclassBDD {
+	SeleniumUtilitiesBDD pageac;
+	public accountpage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		}
+	
+@FindBy(xpath="//div[@class='wt-header-profiledropdown-icon']")
+WebElement account;
+@FindBy(xpath="//a[@class='wt wt-header-profiledropdown-item']")
+WebElement recharge;
+@FindBy(id="Prepaid")
+WebElement pprecharge;
+
+public void page8() throws IOException, InterruptedException {
+	
+	
+	pageac=new SeleniumUtilitiesBDD(driver);
+	Thread.sleep(4000);
+	pageac.doclick(account);
+	Thread.sleep(4000);
+    pageac.doclick(recharge);
+    Thread.sleep(4000);
+//    pageac.windowhandling(recharge);
+//    Thread.sleep(4000);
+//    pageac.doclick(pprecharge);
+//    Thread.sleep(4000);
+    pageac.takeSS("src/test/resources/TakeScreenShot/accountpages.png");
+    
+}
+}
